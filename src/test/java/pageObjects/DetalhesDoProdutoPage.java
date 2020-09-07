@@ -17,7 +17,7 @@ public class DetalhesDoProdutoPage extends BasePage {
 	private By btnContinuarGarantia = By.cssSelector("a.price-warranty__btn--continue.btn-buy-warranty");
 
 	public void esperarCarregarPagina() {
-		waitForPageLoad(10);
+		waitForPageLoad(20);
 		waitElementVisible(btnAdicionarASacola, 10);
 	}
 	
@@ -26,7 +26,7 @@ public class DetalhesDoProdutoPage extends BasePage {
 		browser.findElement(btnAdicionarASacola).click();
 		
 		try {
-			waitForPageLoad(10);
+			waitForPageLoad(20);
 			WebElement element = browser.findElement(btnContinuarGarantia);
 			JavascriptExecutor jse2 = (JavascriptExecutor)browser;
 			jse2.executeScript("arguments[0].scrollIntoView()", element); 

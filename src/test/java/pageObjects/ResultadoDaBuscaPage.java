@@ -19,7 +19,7 @@ public class ResultadoDaBuscaPage extends BasePage {
 	private String nomeProdutoSelecionado;
 	
 	public void verificaSeEstouNaPagina() {
-		waitForPageLoad(10);
+		waitForPageLoad(20);
 		String paginaAtual = browser.getCurrentUrl();
 		Assert.assertEquals(true, paginaAtual.contains(uri));
 	}

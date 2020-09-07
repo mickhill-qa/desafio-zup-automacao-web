@@ -22,10 +22,9 @@ import cucumber.api.junit.Cucumber;
 		},
 		
 		tags = {
-			"@FluxoAlternativo_01_SacolaDeCompras"
+			"@Desafio_Zup_-_Automacao_Web"
 		}
 )
 
-public class RunCucumberTest
-{
+public class RunCucumberTest {
 }

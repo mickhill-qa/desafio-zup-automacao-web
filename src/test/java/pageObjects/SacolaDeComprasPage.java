@@ -20,7 +20,7 @@ public class SacolaDeComprasPage extends BasePage {
 
 
 	public void verificaSeEstouNaPagina() {
-		waitForPageLoad(10);
+		waitForPageLoad(20);
 		waitElementVisible(txtTituloDaPagina, 10);
 		String paginaAtual = browser.getCurrentUrl();
 		Assert.assertEquals(true, paginaAtual.contains(url));
@@ -28,7 +28,7 @@ public class SacolaDeComprasPage extends BasePage {
 	
 	public String verNomeProdutoAdicionado() {
 		try {
-			waitForPageLoad(10);
+			waitForPageLoad(20);
 			waitElementVisible(txtTituloDaPagina, 10);
 			WebElement element 	= browser.findElement(txtNomeProdutoAdicionado);
 			String result 		= element.getText().trim();
