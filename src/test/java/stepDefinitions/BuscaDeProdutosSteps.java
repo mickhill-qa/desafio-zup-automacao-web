@@ -1,5 +1,7 @@
 package stepDefinitions;
 
+import org.junit.Assert;
+
 import baseClass.BaseSteps;
 import cucumber.api.java.pt.Dados;
 import cucumber.api.java.pt.E;
@@ -13,7 +15,7 @@ public class BuscaDeProdutosSteps extends BaseSteps {
 	/**
 	 * Paginas necessaria
 	 **/
-	BuscaProdutosPage paginaInicial = new BuscaProdutosPage(BaseSteps.browser);
+	BuscaProdutosPage paginaInicial 		= new BuscaProdutosPage(BaseSteps.browser);
 	ResultadoBuscaPage paginaResultadoBusca = new ResultadoBuscaPage(BaseSteps.browser);
 
 	
@@ -28,17 +30,20 @@ public class BuscaDeProdutosSteps extends BaseSteps {
 
 	@Quando("^o usuario buscar por \"([^\"]*)\"$")
 	public void o_usuario_buscar_por(String produto) {
-		paginaInicial.preencheInputPesquisa(produto);
+		paginaInicial.preencheCampoPesquisa(produto);
 		paginaInicial.clicaNoBotaoPesquisar();
 	}
 
 	@Entao("^o sistema mostra resultado maior que Zero$")
 	public void o_sistema_mostra_resultado_maior_que_Zero() {
 		paginaResultadoBusca.verificaSeEstouNaPagina();
+		int resultadoQuantidade = paginaResultadoBusca.verResultadoBusca();
+		Assert.assertTrue(resultadoQuantidade > 0);
 	}
 
 	@E("^o sistema mostra a lista de produto\\(s\\) encontrado\\(s\\)$")
 	public void oSistemaMostraAListaDeProdutoSEncontradoS() {
-
+		boolean existeProduto = paginaResultadoBusca.verSeExisteProduto();
+		Assert.assertTrue(existeProduto);
 	}
 }

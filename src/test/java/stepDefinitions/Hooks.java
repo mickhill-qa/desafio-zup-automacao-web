@@ -8,9 +8,9 @@ public class Hooks {
 
 	@Before
 	public void Initialize() {
-		System.out.println("=======================");
-		System.out.println("      Inicio Teste");
-		System.out.println("=======================\n");
+		System.out.println("============================");
+		System.out.println("        Inicio Teste");
+		System.out.println("============================\n");
 		BaseSteps.OpenBrowser();
 	}
 

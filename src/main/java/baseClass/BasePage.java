@@ -21,8 +21,8 @@ public class BasePage {
 		actions = new Actions(browser);
 	}
 
-	public void waitLocalizedElementToBeVisible(By element) {
-		wait = new WebDriverWait(browser, 10000);
+	public void waitElementVisible(By element, int seconds) {
+		wait = new WebDriverWait(browser, seconds);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 	}
 

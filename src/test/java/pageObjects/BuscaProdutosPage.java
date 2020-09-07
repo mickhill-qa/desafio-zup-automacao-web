@@ -24,13 +24,14 @@ public class BuscaProdutosPage extends BasePage {
 		Assert.assertEquals(true, url.equals(paginaAtual));
 	}
 
-	public void preencheInputPesquisa(String produto) {
-		waitLocalizedElementToBeVisible(inputPesrquisa);
+	public void preencheCampoPesquisa(String produto) {
+		waitForPageLoad(10);
+		waitElementVisible(inputPesrquisa, 10);
 		browser.findElement(inputPesrquisa).sendKeys(produto);
 	}
 
 	public void clicaNoBotaoPesquisar() {
-		waitLocalizedElementToBeVisible(btnPesquisar);
+		waitElementVisible(btnPesquisar, 5);
 		browser.findElement(btnPesquisar).click();
 	}
 }
