@@ -8,7 +8,7 @@ import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
 import pageObjects.BuscaProdutosPage;
-import pageObjects.ResultadoBuscaPage;
+import pageObjects.ResultadoDaBuscaPage;
 
 public class BuscaDeProdutosSteps extends BaseSteps {
 
@@ -16,7 +16,7 @@ public class BuscaDeProdutosSteps extends BaseSteps {
 	 * Paginas necessaria
 	 **/
 	BuscaProdutosPage paginaInicial 		= new BuscaProdutosPage(BaseSteps.browser);
-	ResultadoBuscaPage paginaResultadoBusca = new ResultadoBuscaPage(BaseSteps.browser);
+	ResultadoDaBuscaPage paginaResultadoBusca = new ResultadoDaBuscaPage(BaseSteps.browser);
 
 	
 	
