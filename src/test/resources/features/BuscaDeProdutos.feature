@@ -15,10 +15,10 @@ Esquema do Cenario: Buscar por produto - Valido
     E o sistema mostra a lista de produto(s) encontrado(s)
 
 	Exemplos:
-	| PRODUTO_VALIDO          |
-    | "Echo Dot 3ª Geração"   |
-    | "MacBook Pro Retina 13" |
-    | "Headphone JBL T500BT"  |
+		| PRODUTO_VALIDO          |
+		| "Echo Dot 3ª Geração"   |
+#		| "MacBook Pro Retina 13" |
+#		| "Headphone JBL T500BT"  |
 
 
 @FluxoAlternativo_01_BuscaDeProdutos    @BuscaProdutoInvalido
@@ -28,10 +28,10 @@ Esquema do Cenario: Buscar por produto - Invalido
     Entao o sistema informa nao ter encontrado resultado(s)
 
 	Exemplos:
-	| PRODUTO_INVALIDO |
-    | "zzzzzzz"        |
-    | "123456789"      |
-    | "@!@!@!@!@!@!@!" |
+		| PRODUTO_INVALIDO |
+		| "zzzzzzz"        |
+		| "123456789"      |
+		| "@!@!@!@!@!@!@!" |
 
 
 @FluxoAlternativo_02_BuscaDeProdutos    @BuscaProdutoNomeAproximado
@@ -42,10 +42,10 @@ Esquema do Cenario: Buscar por produto - Nome aproximado
     E o sistema mostra a lista de produto(s) encontrado(s)
 
 	Exemplos:
-	| NOME_APROXIMADO   |
-    | "Caixa de som"    |
-    | "Computador"      |
-    | "Fones de ouvido" |
+		| NOME_APROXIMADO   |
+		| "Caixa de som"    |
+		| "Computador"      |
+		| "Fones de ouvido" |
 
 
 @FluxoAlternativo_03_BuscaDeProdutos    @BuscaProdutoPesquisaVazia
