@@ -45,7 +45,7 @@ public class BuscaDeProdutosSteps extends BaseSteps {
 
 	@E("^o sistema mostra a lista de produto\\(s\\) encontrado\\(s\\)$")
 	public void oSistemaMostraAListaDeProdutoSEncontradoS() {
-		boolean existeProduto = paginaResultadoBusca.verSeExisteProduto();
+		boolean existeProduto = paginaResultadoBusca.verSeExisteProdutosListados();
 		Assert.assertTrue(existeProduto);
 	}
 
@@ -56,7 +56,29 @@ public class BuscaDeProdutosSteps extends BaseSteps {
 	 **/
 	@Entao("^o sistema nao mostra resultado de produto\\(s\\) encontrado\\(s\\)$")
 	public void oSistemaNaoMostraResultadoDeProdutoSEncontradoS() {
-		boolean existeProduto = paginaResultadoBusca.verSeExisteProduto();
+		boolean existeProduto = paginaResultadoBusca.verSeExisteProdutosListados();
 		Assert.assertFalse(existeProduto);
+	}
+
+	
+	
+	/**
+	 * FluxoAlternativo_03_BuscaDeProdutos
+	 **/
+	@Quando("^buscar sem preencher o campo de pesquisa$")
+	public void buscarSemPreencherOCampoDePesquisa() {
+		paginaInicial.preencheCampoPesquisa("");
+		paginaInicial.clicaNoBotaoPesquisar();
+	}
+
+	@Entao("^o sistema continuara na mesma pagina$")
+	public void oSistemaContinuaraNaMesmaPagina() {
+		paginaInicial.verificaSeEstouNaPagina();
+	}
+
+	@E("^o sistema nao fara a busca$")
+	public void oSistemaNaoFaraABusca() {
+		boolean existeProdutoListado = paginaResultadoBusca.verSeExisteProdutosListados();
+		Assert.assertFalse(existeProdutoListado);
 	}
 }

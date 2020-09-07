@@ -25,7 +25,7 @@ public class BuscaProdutosPage extends BasePage {
 	}
 
 	public void preencheCampoPesquisa(String produto) {
-		waitForPageLoad(10);
+		waitForPageLoad(15);
 		waitElementVisible(inputPesrquisa, 10);
 		browser.findElement(inputPesrquisa).sendKeys(produto);
 	}

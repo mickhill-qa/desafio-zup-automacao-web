@@ -14,16 +14,19 @@ import cucumber.api.junit.Cucumber;
 		snippets = SnippetType.CAMELCASE,			// METHODOS do Steps em CAMELCASE
 		strict = true,								// Considerar steps indefinidos erros ou nao, default: false
 		dryRun = false,								// Validar Steps sem executar o teste
-		plugin = {									// Plugins do Cucumber
+		plugin = {									// Plugins Cucumber para possivel integracao com Jenkins
 			"pretty",
 			"html:target/cucumber-reports/reports-html",
 			"json:target/cucumber-reports/report.json",
 			"junit:target/cucumber-reports/report.xml"
 		},
 		
-		tags = {  "@FluxoBase_BuscaDeProdutos,"
-				+ "@FluxoAlternativo_01_BuscaDeProdutos,"
-				+ "@FluxoAlternativo_02_BuscaDeProdutos" }
+		tags = {
+			"@FluxoBase_BuscaDeProdutos," +
+			"@FluxoAlternativo_01_BuscaDeProdutos," +
+			"@FluxoAlternativo_02_BuscaDeProdutos," +
+			"@FluxoAlternativo_03_BuscaDeProdutos"
+		}
 )
 
 public class RunCucumberTest

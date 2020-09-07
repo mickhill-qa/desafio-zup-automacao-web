@@ -31,7 +31,7 @@ public class ResultadoBuscaPage extends BasePage {
 		return Integer.parseInt(texto);
 	}
 
-	public Boolean verSeExisteProduto() {
+	public Boolean verSeExisteProdutosListados() {
 		try {
 			browser.findElement(intenList_01);
 	    } catch (NoSuchElementException e) {

@@ -47,8 +47,8 @@ Funcionalidade: Busca de Produtos
 
 
   @FluxoAlternativo_03_BuscaDeProdutos @BuscaProdutoPesquisaVazia
-  Cenario: Buscar por produto - Pesquisa vazia
+  Cenario: Buscar por produto - Campo de pesquisa vazio
     Dados que o usuario acesse o site do Magazine Luiza
-    Quando buscar sem preencher o campo obrigatorio
+    Quando buscar sem preencher o campo de pesquisa
     Entao o sistema continuara na mesma pagina
-    E o sistema nao fara a pesquisa
+    E o sistema nao fara a busca
