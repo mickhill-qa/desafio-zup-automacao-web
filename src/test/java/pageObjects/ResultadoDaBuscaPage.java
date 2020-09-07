@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-
 import baseClass.BasePage;
 
 public class ResultadoDaBuscaPage extends BasePage {
@@ -15,7 +14,6 @@ public class ResultadoDaBuscaPage extends BasePage {
 	private String uri 			= "magazineluiza.com.br/busca";
 	private By txtComResultado 	= By.xpath("//h1[@itemprop='description']/small");
 	private By intenList_01 	= By.cssSelector("ul > li:nth-child(1) > a.product-li");
-	
 	private String nomeProdutoSelecionado;
 	
 	public void verificaSeEstouNaPagina() {

@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import baseClass.BasePage;
 
 public class SacolaDeComprasPage extends BasePage {
@@ -17,7 +16,6 @@ public class SacolaDeComprasPage extends BasePage {
 	private By txtTituloDaPagina 			= By.cssSelector("#root > div > div.App.clearfix > div > div.BasketPage-title");
 	private By txtNomeProdutoAdicionado 	= By.cssSelector("#root > div > div.App.clearfix > div > div:nth-child(2) > div > div.BasketTable > div.BasketTable-items > div:nth-child(1) > div > div.BasketItemProduct > div > a > p:nth-child(1)");
 	private By btnExcluirProdutoAdicionado 	= By.cssSelector("#root > div > div.App.clearfix > div > div:nth-child(2) > div > div.BasketTable > div.BasketTable-items > div:nth-child(1) > div > div.BasketItemProduct-quantity > button > span");
-
 
 	public void verificaSeEstouNaPagina() {
 		waitForPageLoad(20);

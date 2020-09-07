@@ -7,7 +7,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BrowserTypes {
 	public static enum Browsers {
-		CHROME, CHROME_HEADLESS, FIREFOX,
+		CHROME,
+		CHROME_HEADLESS,
+		FIREFOX,
 	}
 
 	public static WebDriver GetBrownser() {
@@ -22,6 +24,7 @@ public class BrowserTypes {
 		switch (browserUser) {
 			case CHROME:
 				resultBrowser = new ChromeDriver();
+				resultBrowser.manage().window().maximize();
 				break;
 			case CHROME_HEADLESS:
 				ChromeOptions options = new ChromeOptions();
@@ -30,6 +33,7 @@ public class BrowserTypes {
 				break;
 			case FIREFOX:
 				resultBrowser = new FirefoxDriver();
+				resultBrowser.manage().window().maximize();
 				break;
 			default:
 				resultBrowser = null;

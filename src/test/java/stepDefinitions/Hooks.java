@@ -9,9 +9,6 @@ public class Hooks {
 
 	@Before
 	public void Initialize() {
-		System.out.println("============================");
-		System.out.println("        Inicio Teste");
-		System.out.println("============================\n");
 		BaseSteps.OpenBrowser();
 	}
 
@@ -20,8 +17,12 @@ public class Hooks {
 		if (!scenario.isFailed()) {
 			BaseSteps.CloseBrowser();
 		}
-		System.out.println("=======================");
-		System.out.println("       Fim Teste");
-		System.out.println("=======================\n");
+		else {
+			/** 
+			 * Proximas Versao:
+			 * 	Implementar ScreenShot para Erros...
+			 * 	Depois fecha o Navegado.
+			 * */
+		}
 	}
 }

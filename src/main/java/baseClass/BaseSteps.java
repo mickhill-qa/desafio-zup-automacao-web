@@ -1,7 +1,6 @@
 package baseClass;
 
 import org.openqa.selenium.WebDriver;
-
 import support.BrowserTypes;
 
 public class BaseSteps {

@@ -1,7 +1,6 @@
 package stepDefinitions;
 
 import org.junit.Assert;
-
 import baseClass.BaseSteps;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
