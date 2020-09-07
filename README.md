@@ -1,45 +1,154 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+Desafio ZUP Automação Web
+=======================
+Este é um **Projeto Maven** e foi criado conforme requisito abaixo, utilizando os seguintes recursos:
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+- Java;
+- Maven;
+- JUnit;
+- Selenium;
+- Cucumber (BDD);
+- Padrão PageObjects;
+- Pluguins p/ relatórios automatizados no Jenkins;
+- IDE: Eclipse 2020-06;
+- bitbucket - Git (git-flow).
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+**Aviso Importante:**
+
+Os teste foram validados no **Google Chrome**.
+
+Utilizei o WebDriver nas **Variáveis de Ambiente** do meu sistema. Caso você não possua o mesmo setup, eu disponibilizei a versão mais recentes ChromeDriver para Windows dentro do projeto:
+```
+/src/test/resources/webdrivers/
+```
+*Para utilizar o WebDrivers localmente no projeto, remova a tag de comentário na linha 21 da classe:*
+```
+/src/main/java/support/BrowserTypes.java
+```
+---
+
+
+
+## Requisito
+
+Utilizando as ferramentas que preferir crie um teste automatizado que faça o fluxo de ponta a ponta de um cliente que:
+
+*1 - Entre em um grande portal de comércio online*
+*(Exemplo: Americanas, Submarino, Magazine Luiza)*
+
+*2 - Faça uma busca por um produto*
+
+*3 - Valide o retorno da busca*
+
+*4 - Escolha um produto na lista*
+
+*5 - Adicione o carrinho*
+
+*6 - Valide o produto no carrinho*
+
+
+Para a criação dos cenários de testes devem ser considerados casos de sucesso e fluxos alternativos
+
+
+***O documento completo está na raiz do projeto:
+[Desafio Zup - automação Web.pdf](https://bitbucket.org/MickHill/desafio_zup_automacao_web/raw/ec74c8e1f20a18ea8a360198320085bced4ebf3a/Desafio%20Zup%20-%20automa%C3%A7%C3%A3o%20Web.pdf)***
 
 ---
 
-## Edit a file
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+## Planejamento dos Testes
+
+Baseado nos Steps do Requisito eu criei 2 User Stories, separando o E2E em duas Funcionalidades e possibilitando o reaproveitamento do Cucumber-Steps:
+
+~~~gherkin
+Funcionalidade: Busca de Produtos
+  Eu como usuario da pagina do Magazine Luiza
+  Quero fazer uma busca por um produto
+  Para validar o retorno da busca
+~~~
+
+~~~gherkin
+Funcionalidade: Sacola de Compras
+  Eu como usuario da pagina do Magazine Luiza
+  Quero adicionar um produto a Sacola de Compras
+  Para validar a Sacola de Compras
+~~~
+
+
+**Mapeando Cenários de Teste**
+
+*Funcionalidade: Busca de Produtos*
+
+- Cenário: Buscar por produto - Valido
+- Cenário: Buscar por produto - Invalido
+- Cenário: Buscar por produto - Nome aproximado
+- Cenário: Buscar por produto - Campo de pesquisa vazio
+
+*Funcionalidade: Sacola de Compras*
+
+- Cenário: Sacola de Compras - Adicionar produto
+- Cenário: Sacola de Compras - Excluir produto
+
+
+**Criando as Features de Teste**
+
+Tem em mãos os Cenários de cada fluxos para os testes (fluxo base e alternativos), comecei a escrita das feature em **gherkin** tendo como base o **BDD**:
+
+```
+/src/test/resources/features/BuscaDeProdutos.feature
+```
+```
+/src/test/resources/features/SacolaDeCompras.feature
+```
 
 ---
 
-## Create a file
 
-Next, you’ll add a new file to this repository.
 
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
+##Setup da IDE e Projeto de Automação
 
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
+**Criar Projeto no Eclipse**
 
----
+- File > New > Maven Project
 
-## Clone a repository
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
 
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
+**Instalação de plugin na IDE**
 
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+- Help > Eclipse Marketplace > [Cucumber Eclipse Plugin](http://marketplace.eclipse.org/content/cucumber-eclipse-plugin)
+
+
+
+**Instalar pacotes na Aplicação via Maven (pom.xml)**
+
+- cucumber-java 1.2.5
+- cucumber-junit 1.2.5
+- selenium-java 3.141.59
+
+**pom.xml**
+```
+<dependencies>
+	<dependency>
+		<groupId>info.cukes</groupId>
+		<artifactId>cucumber-java</artifactId>
+		<version>1.2.5</version>
+	</dependency>
+	<dependency>
+		<groupId>info.cukes</groupId>
+		<artifactId>cucumber-junit</artifactId>
+		<version>1.2.5</version>
+		<scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.seleniumhq.selenium</groupId>
+		<artifactId>selenium-java</artifactId>
+		<version>3.141.59</version>
+	</dependency>
+</dependencies>
+```
+
+'
+
+**Histórico de Implementação - Git-Flow**
+
+[bitbucket.org/MickHill/desafio_zup_automacao_web/commits/](https://bitbucket.org/MickHill/desafio_zup_automacao_web/commits/)
