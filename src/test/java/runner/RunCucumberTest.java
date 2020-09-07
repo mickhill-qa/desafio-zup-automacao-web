@@ -22,13 +22,9 @@ import cucumber.api.junit.Cucumber;
 		},
 		
 		tags = {
-			"@FluxoBase_BuscaDeProdutos," +
-			"@FluxoAlternativo_01_BuscaDeProdutos," +
-			"@FluxoAlternativo_02_BuscaDeProdutos," +
-			"@FluxoAlternativo_03_BuscaDeProdutos"
+			"@Desafio_Zup_-_Automacao_Web"
 		}
 )
 
-public class RunCucumberTest
-{
+public class RunCucumberTest {
 }

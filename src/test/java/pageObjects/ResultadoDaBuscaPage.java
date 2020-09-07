@@ -7,17 +7,19 @@ import org.openqa.selenium.WebDriver;
 
 import baseClass.BasePage;
 
-public class ResultadoBuscaPage extends BasePage {
-	public ResultadoBuscaPage(WebDriver _browser) {
+public class ResultadoDaBuscaPage extends BasePage {
+	public ResultadoDaBuscaPage(WebDriver _browser) {
 		super(_browser);
 	}
 
-	private String uri 		= "magazineluiza.com.br/busca";
-	private By txtComResultado = By.xpath("//h1[@itemprop='description']/small");
-	private By intenList_01 = By.cssSelector("ul > li:nth-child(1) > a.product-li");
+	private String uri 			= "magazineluiza.com.br/busca";
+	private By txtComResultado 	= By.xpath("//h1[@itemprop='description']/small");
+	private By intenList_01 	= By.cssSelector("ul > li:nth-child(1) > a.product-li");
+	
+	private String nomeProdutoSelecionado;
 	
 	public void verificaSeEstouNaPagina() {
-		waitForPageLoad(10);
+		waitForPageLoad(20);
 		String paginaAtual = browser.getCurrentUrl();
 		Assert.assertEquals(true, paginaAtual.contains(uri));
 	}
@@ -34,9 +36,20 @@ public class ResultadoBuscaPage extends BasePage {
 	public Boolean verSeExisteProdutosListados() {
 		try {
 			browser.findElement(intenList_01);
-	    } catch (NoSuchElementException e) {
+			return true;
+	    }
+		catch (NoSuchElementException e) {
 	        return false;
 	    }
-	    return true;
+	}
+	
+	public void selecionaProdutoDesejado() {
+		waitElementVisible(intenList_01, 5);
+		nomeProdutoSelecionado = browser.findElement(intenList_01).getText();
+		browser.findElement(intenList_01).click();
+	}
+
+	public String verNomeProdutoSelecionado() {
+		return nomeProdutoSelecionado;
 	}
 }

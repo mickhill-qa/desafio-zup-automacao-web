@@ -14,7 +14,7 @@ Funcionalidade: Sacola de Compras
   @FluxoBase_SacolaDeCompras @AdicionarProdutoASacolaDeCompras
   Cenario: Sacola de Compras - Adicionar produto
     Dado que o usuario escolha um produto na lista
-    Quando o usuario adicionar a Sacola de Compras
+    Quando o usuario adicionar o produto a Sacola de Compras
     Entao o sistema mostra a Sacola de Compras com o produto
 
   @FluxoAlternativo_01_SacolaDeCompras @ExcluirProdutoDaSacolaDeCompras
