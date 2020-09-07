@@ -13,7 +13,7 @@ public class ResultadoBuscaPage extends BasePage {
 	}
 
 	private String uri 		= "magazineluiza.com.br/busca";
-	private By txtResultado = By.xpath("//h1[@itemprop='description']/small");
+	private By txtComResultado = By.xpath("//h1[@itemprop='description']/small");
 	private By intenList_01 = By.cssSelector("ul > li:nth-child(1) > a.product-li");
 	
 	public void verificaSeEstouNaPagina() {
@@ -22,9 +22,9 @@ public class ResultadoBuscaPage extends BasePage {
 		Assert.assertEquals(true, paginaAtual.contains(uri));
 	}
 	
-	public int verResultadoBusca() {
-		waitElementVisible(txtResultado, 10);
-		String texto = browser.findElement(txtResultado).getText();
+	public int verQuantidadeResultados() {
+		waitElementVisible(txtComResultado, 10);
+		String texto = browser.findElement(txtComResultado).getText();
 		texto = texto.substring(1);
 		texto = (texto.split(" produto"))[0];
 		texto = texto.trim();

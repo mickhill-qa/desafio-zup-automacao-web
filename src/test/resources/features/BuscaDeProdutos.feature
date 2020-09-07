@@ -23,7 +23,7 @@ Funcionalidade: Busca de Produtos
   Esquema do Cenario: Buscar por produto - Invalido
     Dados que o usuario acesse o site do Magazine Luiza
     Quando o usuario buscar por <PRODUTO_INVALIDO>
-    Entao o sistema informa nao ter encontrado resultado(s)
+    Entao o sistema nao mostra resultado de produto(s) encontrado(s)
 
     Exemplos: 
       | PRODUTO_INVALIDO |

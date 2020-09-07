@@ -21,7 +21,9 @@ import cucumber.api.junit.Cucumber;
 			"junit:target/cucumber-reports/report.xml"
 		},
 		
-		tags = { "@FluxoBase_BuscaDeProdutos" }
+		tags = {  "@FluxoBase_BuscaDeProdutos,"
+				+ "@FluxoAlternativo_01_BuscaDeProdutos,"
+				+ "@FluxoAlternativo_02_BuscaDeProdutos" }
 )
 
 public class RunCucumberTest

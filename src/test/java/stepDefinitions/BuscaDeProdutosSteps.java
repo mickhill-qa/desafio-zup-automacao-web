@@ -19,8 +19,10 @@ public class BuscaDeProdutosSteps extends BaseSteps {
 	ResultadoBuscaPage paginaResultadoBusca = new ResultadoBuscaPage(BaseSteps.browser);
 
 	
+	
 	/**
 	 * FluxoBase_BuscaDeProdutos
+	 * FluxoAlternativo_02_BuscaDeProdutos
 	 **/
 	@Dados("^que o usuario acesse o site do Magazine Luiza$")
 	public void que_o_usuario_acesse_o_site_do_Magazine_Luiza() {
@@ -37,13 +39,24 @@ public class BuscaDeProdutosSteps extends BaseSteps {
 	@Entao("^o sistema mostra resultado maior que Zero$")
 	public void o_sistema_mostra_resultado_maior_que_Zero() {
 		paginaResultadoBusca.verificaSeEstouNaPagina();
-		int resultadoQuantidade = paginaResultadoBusca.verResultadoBusca();
-		Assert.assertTrue(resultadoQuantidade > 0);
+		int quantidadeProdutosListados = paginaResultadoBusca.verQuantidadeResultados();
+		Assert.assertTrue(quantidadeProdutosListados > 0);
 	}
 
 	@E("^o sistema mostra a lista de produto\\(s\\) encontrado\\(s\\)$")
 	public void oSistemaMostraAListaDeProdutoSEncontradoS() {
 		boolean existeProduto = paginaResultadoBusca.verSeExisteProduto();
 		Assert.assertTrue(existeProduto);
+	}
+
+	
+	
+	/**
+	 * FluxoAlternativo_01_BuscaDeProdutos
+	 **/
+	@Entao("^o sistema nao mostra resultado de produto\\(s\\) encontrado\\(s\\)$")
+	public void oSistemaNaoMostraResultadoDeProdutoSEncontradoS() {
+		boolean existeProduto = paginaResultadoBusca.verSeExisteProduto();
+		Assert.assertFalse(existeProduto);
 	}
 }
