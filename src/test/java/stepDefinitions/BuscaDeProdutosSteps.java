@@ -15,8 +15,8 @@ public class BuscaDeProdutosSteps extends BaseSteps {
 	/**
 	 * Paginas necessaria
 	 **/
-	BuscaProdutosPage paginaInicial 		= new BuscaProdutosPage(BaseSteps.browser);
-	ResultadoDaBuscaPage paginaResultadoBusca = new ResultadoDaBuscaPage(BaseSteps.browser);
+	BuscaProdutosPage paginaInicial 			= new BuscaProdutosPage(BaseSteps.browser);
+	ResultadoDaBuscaPage paginaResultadoBusca 	= new ResultadoDaBuscaPage(BaseSteps.browser);
 
 	
 	

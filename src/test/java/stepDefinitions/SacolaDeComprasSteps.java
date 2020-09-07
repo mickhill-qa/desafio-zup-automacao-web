@@ -26,7 +26,6 @@ public class SacolaDeComprasSteps extends BaseSteps {
 	 **/
 	@Dado("^que o usuario escolha um produto na lista$")
 	public void queOUsuarioEscolhaUmProdutoNaLista() {
-		// Refatorar: Abre o produto e verifica se é ele
 		paginaResultadoBusca.selecionaProdutoDesejado();
 	}
 
@@ -43,5 +42,30 @@ public class SacolaDeComprasSteps extends BaseSteps {
 		String produtoNaBusca 	= paginaResultadoBusca.verNomeProdutoSelecionado();
 		String produtoNaSacola	= paginaSacolaDeCompras.verNomeProdutoAdicionado();
 		Assert.assertTrue(produtoNaBusca.contains(produtoNaSacola));
+	}
+
+	
+	
+	/**
+	 * FluxoAlternativo_01_SacolaDeCompras
+	 **/
+	@Dado("^que o usuario adicione um produto a Sacola de Compras$")
+	public void queOUsuarioAdicioneUmProdutoASacolaDeCompras() throws Throwable {
+		this.queOUsuarioEscolhaUmProdutoNaLista();
+		this.oUsuarioAdicionarOProdutoASacolaDeCompras();
+		this.oSistemaMostraASacolaDeComprasComOProduto();
+	}
+	
+	@Quando("^o usuario excluir este produto$")
+	public void oUsuarioExcluirEsteProduto() throws Throwable {
+		paginaSacolaDeCompras.clicaNoBotaoExcluirProduto();
+	}
+	
+	@Entao("^o sistema mostra a Sacola de Compras sem o produto$")
+	public void oSistemaMostraASacolaDeComprasSemOProduto() {
+		paginaSacolaDeCompras.verificaSeEstouNaPagina();
+		
+		String produtoNaSacola	= paginaSacolaDeCompras.verNomeProdutoAdicionado();
+		Assert.assertNull(produtoNaSacola);
 	}
 }

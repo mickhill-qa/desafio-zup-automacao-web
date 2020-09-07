@@ -22,8 +22,7 @@ import cucumber.api.junit.Cucumber;
 		},
 		
 		tags = {
-//			"@FluxoBase_BuscaDeProdutos," +
-			"@FluxoBase_SacolaDeCompras"
+			"@FluxoAlternativo_01_SacolaDeCompras"
 		}
 )
 
