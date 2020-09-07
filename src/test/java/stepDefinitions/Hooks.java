@@ -16,9 +16,9 @@ public class Hooks {
 
 	@After
 	public void Finish() {
+		BaseSteps.CloseBrowser();
 		System.out.println("=======================");
 		System.out.println("       Fim Teste");
 		System.out.println("=======================\n");
-		BaseSteps.CloseBrowser();
 	}
 }
