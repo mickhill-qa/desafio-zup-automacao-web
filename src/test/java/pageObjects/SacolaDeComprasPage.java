@@ -17,7 +17,8 @@ public class SacolaDeComprasPage extends BasePage {
 	private By txtNomeProdutoAdicionado 	= By.cssSelector("#root > div > div.App.clearfix > div > div:nth-child(2) > div > div.BasketTable > div.BasketTable-items > div:nth-child(1) > div > div.BasketItemProduct > div > a > p:nth-child(1)");
 	private By btnExcluirProdutoAdicionado 	= By.cssSelector("#root > div > div.App.clearfix > div > div:nth-child(2) > div > div.BasketTable > div.BasketTable-items > div:nth-child(1) > div > div.BasketItemProduct-quantity > button > span");
 
-	public void verificaSeEstouNaPagina() {
+	public void verificaSeEstouNaPagina() throws InterruptedException {
+		Thread.sleep(2500); 
 		waitForPageLoad(20);
 		waitElementVisible(txtTituloDaPagina, 10);
 		String paginaAtual = browser.getCurrentUrl();
@@ -26,8 +27,6 @@ public class SacolaDeComprasPage extends BasePage {
 	
 	public String verNomeProdutoAdicionado() {
 		try {
-			waitForPageLoad(20);
-			waitElementVisible(txtTituloDaPagina, 10);
 			WebElement element 	= browser.findElement(txtNomeProdutoAdicionado);
 			String result 		= element.getText().trim();
 			String ultimsLetra 	= ( result.substring( result.length() - 1, result.length()) ).trim();
@@ -40,8 +39,7 @@ public class SacolaDeComprasPage extends BasePage {
 		}
 	}
 
-	public void clicaNoBotaoExcluirProduto() throws Throwable {
+	public void clicaNoBotaoExcluirProduto() {
 		browser.findElement(btnExcluirProdutoAdicionado).click();
-		Thread.sleep(2000);
 	}
 }
