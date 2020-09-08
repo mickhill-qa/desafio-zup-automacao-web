@@ -13,7 +13,7 @@ public class BrowserTypes {
 	}
 
 	public static WebDriver GetBrownser() {
-		return GetBrownser(Browsers.CHROME); // Browser Default
+		return GetBrownser(Browsers.FIREFOX); // Browser Default
 	}
 
 	public static WebDriver GetBrownser(Browsers browserUser) {
