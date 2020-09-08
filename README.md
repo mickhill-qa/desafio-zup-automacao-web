@@ -12,18 +12,24 @@ Este é um **Projeto Maven** e foi criado conforme requisito abaixo, utilizando 
 - IDE: Eclipse 2020-06;
 - bitbucket - Git (git-flow).
 
-**Aviso Importante:**
 
-Os teste foram validados no **Google Chrome**.
+**Avisos Importantes:**
 
-Utilizei o WebDriver nas **Variáveis de Ambiente** do meu sistema. Caso você não possua o mesmo setup, eu disponibilizei a versão mais recentes ChromeDriver para Windows dentro do projeto:
+Os teste foram validados no **Google Chrome** e **Mozilla Firefox**, e eu utilizei o WebDriver nas **Variáveis de Ambiente** do meu sistema. Caso você não possua o mesmo setup, eu disponibilizei as versões mais recentes do ChromeDriver e GeckoDriver para Windows dentro do projeto:
 ```
 /src/test/resources/webdrivers/
 ```
-*Para utilizar o WebDrivers localmente no projeto, remova a tag de comentário na linha 21 da classe:*
+
+Para utiliza-las localmente no projeto, remova as tags de comentário nas linhas 21 e 22 da classe:
 ```
 /src/main/java/support/BrowserTypes.java
 ```
+
+E para alternar entre os navegadores, substitua na mesma classe o **Browser Default** na linha 16.
+
+- CHROME
+- CHROME_HEADLESS
+- FIREFOX
 ---
 
 
