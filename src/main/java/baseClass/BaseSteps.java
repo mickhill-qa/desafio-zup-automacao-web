@@ -14,7 +14,6 @@ public class BaseSteps {
 	
 	public static void CloseBrowser() throws Throwable {
 		if (browser == null) return;
-		browser.close();
 		browser.quit();
 		browser = null;
 		Thread.sleep(1500);
