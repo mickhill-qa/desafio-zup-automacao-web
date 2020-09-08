@@ -35,7 +35,7 @@ public class SacolaDeComprasSteps extends BaseSteps {
 	}
 
 	@Entao("^o sistema mostra a Sacola de Compras com o produto$")
-	public void oSistemaMostraASacolaDeComprasComOProduto() {
+	public void oSistemaMostraASacolaDeComprasComOProduto() throws Throwable {
 		paginaSacolaDeCompras.verificaSeEstouNaPagina();
 		
 		String produtoNaBusca 	= paginaResultadoBusca.verNomeProdutoSelecionado();
@@ -56,12 +56,12 @@ public class SacolaDeComprasSteps extends BaseSteps {
 	}
 	
 	@Quando("^o usuario excluir este produto$")
-	public void oUsuarioExcluirEsteProduto() throws Throwable {
+	public void oUsuarioExcluirEsteProduto() {
 		paginaSacolaDeCompras.clicaNoBotaoExcluirProduto();
 	}
 	
 	@Entao("^o sistema mostra a Sacola de Compras sem o produto$")
-	public void oSistemaMostraASacolaDeComprasSemOProduto() {
+	public void oSistemaMostraASacolaDeComprasSemOProduto() throws Throwable {
 		paginaSacolaDeCompras.verificaSeEstouNaPagina();
 		
 		String produtoNaSacola	= paginaSacolaDeCompras.verNomeProdutoAdicionado();
