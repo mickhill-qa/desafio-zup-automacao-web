@@ -21,14 +21,12 @@ public class DetalhesDoProdutoPage extends BasePage {
 		waitForPageLoad(20);
 		waitElementClickable(btnAdicionarASacola, 5);
 		javascriptClick(btnAdicionarASacola);
-//		browser.findElement(btnAdicionarASacola).click();
 		
 		try {
 			waitForPageLoad(20);
 			waitElementClickable(btnContinuarGarantia, 5);
 			positionScreenOn(btnContinuarGarantia);
 			javascriptClick(btnContinuarGarantia);
-//			browser.findElement(btnContinuarGarantia).click();
 			return true;
 	    }
 		catch (Exception e) {
