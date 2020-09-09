@@ -16,20 +16,24 @@ Este é um **Projeto Maven** e foi criado conforme requisito abaixo, utilizando 
 **Avisos Importantes:**
 
 Os teste foram validados no **Google Chrome** e **Mozilla Firefox**, e eu utilizei o WebDriver nas **Variáveis de Ambiente** do meu sistema. Caso você não possua o mesmo setup, eu disponibilizei as versões mais recentes do ChromeDriver e GeckoDriver para Windows dentro do projeto:
+
 ```
 /src/test/resources/webdrivers/
 ```
 
-Para utiliza-las localmente no projeto, remova as tags de comentário nas linhas 21 e 22 da classe:
+Para utiliza-las localmente no projeto, remova as tags de comentário nas linhas 23 e 24 da classe:
+
 ```
 /src/main/java/support/BrowserTypes.java
 ```
 
-E para alternar entre os navegadores, substitua na mesma classe o **Browser Default** na linha 16.
+E para alternar entre os navegadores, substitua na mesma classe o **Browser Default** na linha 18.
 
 - CHROME
 - CHROME_HEADLESS
 - FIREFOX
+- FIREFOX_HEADLESS
+
 ---
 
 
@@ -98,7 +102,7 @@ Funcionalidade: Sacola de Compras
 
 **Criando as Features de Teste**
 
-Tem em mãos os Cenários de cada fluxos para os testes (fluxo base e alternativos), comecei a escrita das feature em **gherkin** tendo como base o **BDD**:
+Tendo em mãos os Cenários de cada fluxos de teste (fluxo base e alternativos), comecei a escrita das features em **gherkin** tendo como base o **BDD**:
 
 ```
 /src/test/resources/features/BuscaDeProdutos.feature
@@ -132,6 +136,7 @@ Tem em mãos os Cenários de cada fluxos para os testes (fluxo base e alternativ
 - selenium-java 3.141.59
 
 **pom.xml**
+
 ```
 <dependencies>
 	<dependency>

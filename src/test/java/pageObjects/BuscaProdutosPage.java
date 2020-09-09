@@ -30,7 +30,7 @@ public class BuscaProdutosPage extends BasePage {
 	}
 
 	public void clicaNoBotaoPesquisar() {
-		waitElementVisible(btnPesquisar, 5);
+		waitElementClickable(btnPesquisar, 5);
 		browser.findElement(btnPesquisar).click();
 	}
 }
