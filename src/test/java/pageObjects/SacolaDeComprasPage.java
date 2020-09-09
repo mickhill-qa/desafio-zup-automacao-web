@@ -2,9 +2,11 @@ package pageObjects;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import baseClass.BasePage;
 
 public class SacolaDeComprasPage extends BasePage {
@@ -27,6 +29,9 @@ public class SacolaDeComprasPage extends BasePage {
 	
 	public String verNomeProdutoAdicionado() {
 		try {
+			WebDriverWait wait = new WebDriverWait(browser, 5);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(txtNomeProdutoAdicionado));
+			
 			WebElement element 	= browser.findElement(txtNomeProdutoAdicionado);
 			String result 		= element.getText().trim();
 			String ultimsLetra 	= ( result.substring( result.length() - 1, result.length()) ).trim();
@@ -34,7 +39,7 @@ public class SacolaDeComprasPage extends BasePage {
 				result = (result.substring(0, result.length() - 1)).trim(); 
 			return result;
 		} 
-		catch (NoSuchElementException e) {
+		catch (WebDriverException e) {
 			return null;
 		}
 	}

@@ -27,11 +27,13 @@ public class BuscaDeProdutosSteps extends BaseSteps {
 	public void que_o_usuario_acesse_o_site_do_Magazine_Luiza() {
 		paginaInicial.abrirPagina();
 		paginaInicial.verificaSeEstouNaPagina();
+		BaseSteps.screenShotNow();
 	}
 
 	@Quando("^o usuario buscar por \"([^\"]*)\"$")
 	public void o_usuario_buscar_por(String produto) {
 		paginaInicial.preencheCampoPesquisa(produto);
+		BaseSteps.screenShotNow();
 		paginaInicial.clicaNoBotaoPesquisar();
 	}
 
@@ -46,6 +48,7 @@ public class BuscaDeProdutosSteps extends BaseSteps {
 	public void oSistemaMostraAListaDeProdutoSEncontradoS() {
 		boolean existeProduto = paginaResultadoBusca.verSeExisteProdutosListados();
 		Assert.assertTrue(existeProduto);
+		BaseSteps.screenShotNow();
 	}
 
 	
@@ -57,6 +60,7 @@ public class BuscaDeProdutosSteps extends BaseSteps {
 	public void oSistemaNaoMostraResultadoDeProdutoSEncontradoS() {
 		boolean existeProduto = paginaResultadoBusca.verSeExisteProdutosListados();
 		Assert.assertFalse(existeProduto);
+		BaseSteps.screenShotNow();
 	}
 
 	
@@ -67,6 +71,7 @@ public class BuscaDeProdutosSteps extends BaseSteps {
 	@Quando("^buscar sem preencher o campo de pesquisa$")
 	public void buscarSemPreencherOCampoDePesquisa() {
 		paginaInicial.preencheCampoPesquisa("");
+		BaseSteps.screenShotNow();
 		paginaInicial.clicaNoBotaoPesquisar();
 	}
 
@@ -79,5 +84,6 @@ public class BuscaDeProdutosSteps extends BaseSteps {
 	public void oSistemaNaoFaraABusca() {
 		boolean existeProdutoListado = paginaResultadoBusca.verSeExisteProdutosListados();
 		Assert.assertFalse(existeProdutoListado);
+		BaseSteps.screenShotNow();
 	}
 }
