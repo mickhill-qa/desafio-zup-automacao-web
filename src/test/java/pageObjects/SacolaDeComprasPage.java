@@ -40,6 +40,7 @@ public class SacolaDeComprasPage extends BasePage {
 	}
 
 	public void clicaNoBotaoExcluirProduto() {
+		waitElementClickable(btnExcluirProdutoAdicionado, 5);
 		browser.findElement(btnExcluirProdutoAdicionado).click();
 	}
 }
