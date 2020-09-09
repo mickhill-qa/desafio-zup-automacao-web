@@ -13,7 +13,7 @@ public class BrowserTypes {
 	}
 
 	public static WebDriver GetBrownser() {
-		return GetBrownser(Browsers.FIREFOX); // Browser Default
+		return GetBrownser(Browsers.CHROME_HEADLESS); // Browser Default
 	}
 
 	public static WebDriver GetBrownser(Browsers browserUser) {
@@ -29,6 +29,7 @@ public class BrowserTypes {
 			case CHROME_HEADLESS:
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments("--headless");
+				options.addArguments("window-size=1920x1080");
 				resultBrowser = new ChromeDriver(options);
 				break;
 			case FIREFOX:

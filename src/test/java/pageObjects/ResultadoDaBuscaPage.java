@@ -44,6 +44,7 @@ public class ResultadoDaBuscaPage extends BasePage {
 	public void selecionaProdutoDesejado() {
 		waitElementVisible(intenList_01, 5);
 		nomeProdutoSelecionado = browser.findElement(intenList_01).getText();
+		waitElementClickable(intenList_01, 5);
 		browser.findElement(intenList_01).click();
 	}
 
