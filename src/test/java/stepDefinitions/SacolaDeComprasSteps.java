@@ -25,12 +25,14 @@ public class SacolaDeComprasSteps extends BaseSteps {
 	 **/
 	@Dado("^que o usuario escolha um produto na lista$")
 	public void queOUsuarioEscolhaUmProdutoNaLista() {
+		BaseSteps.screenShotNow();
 		paginaResultadoBusca.selecionaProdutoDesejado();
 	}
 
 	@Quando("^o usuario adicionar o produto a Sacola de Compras$")
 	public void oUsuarioAdicionarOProdutoASacolaDeCompras() {
 		paginaDoProduto.esperarCarregarPagina();
+		BaseSteps.screenShotNow();
 		paginaDoProduto.adicionarProduto();
 	}
 
@@ -41,6 +43,7 @@ public class SacolaDeComprasSteps extends BaseSteps {
 		String produtoNaBusca 	= paginaResultadoBusca.verNomeProdutoSelecionado();
 		String produtoNaSacola	= paginaSacolaDeCompras.verNomeProdutoAdicionado();
 		Assert.assertTrue(produtoNaBusca.contains(produtoNaSacola));
+		BaseSteps.screenShotNow();
 	}
 
 	
@@ -66,5 +69,6 @@ public class SacolaDeComprasSteps extends BaseSteps {
 		
 		String produtoNaSacola	= paginaSacolaDeCompras.verNomeProdutoAdicionado();
 		Assert.assertNull(produtoNaSacola);
+		BaseSteps.screenShotNow();
 	}
 }
