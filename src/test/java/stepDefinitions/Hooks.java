@@ -8,19 +8,15 @@ import cucumber.api.java.Before;
 public class Hooks {
 
 	@Before
-	public void Initialize(Scenario scenario) throws Throwable {
+	public void Initialize(Scenario _scenario) throws Throwable {
 		BaseSteps.OpenBrowser();
+		BaseSteps.scenario = _scenario;
 	}
 
 	@After
-	public void Finish(Scenario scenario) throws Throwable {
-		if (scenario.isFailed()) {
-			/** 
-			 * Proximas Versao:
-			 * 	Implementar ScreenShot para Erros...
-			 * 	Depois fecha o Navegado.
-			 * */
-		}
+	public void Finish() throws Throwable {
+		if (BaseSteps.scenario.isFailed())
+			BaseSteps.screenShotNow();
 		BaseSteps.CloseBrowser();
 	}
 }
