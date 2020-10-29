@@ -6,8 +6,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
-public class BrowserTypes {
-	public static enum Browsers {
+public class BrowserFactory {
+	public static enum Browser {
 		CHROME,
 		CHROME_HEADLESS,
 		FIREFOX,
@@ -15,10 +15,10 @@ public class BrowserTypes {
 	}
 
 	public static WebDriver GetBrownser() {
-		return GetBrownser(Browsers.CHROME); // Browser Default
+		return GetBrownser(Browser.CHROME); // Browser Default
 	}
 
-	public static WebDriver GetBrownser(Browsers browserUser) {
+	public static WebDriver GetBrownser(Browser browserUser) {
 		WebDriver resultBrowser;
 		// System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\webdrivers\\chromedriver.exe");
 		// System.setProperty("webdriver.gecko.driver",  "src\\test\\resources\\webdrivers\\geckodriver.exe");
