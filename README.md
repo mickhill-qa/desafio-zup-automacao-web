@@ -10,7 +10,7 @@ Este é um **Projeto Maven** e foi criado conforme requisito abaixo, utilizando 
 - Padrão PageObjects;
 - Pluguins p/ relatórios automatizados no Jenkins;
 - IDE: Eclipse 2020-06;
-- bitbucket - Git (git-flow).
+- Bitbucket (migrado p/ GitHub) - Git (git-flow).
 
 
 **Avisos Importantes:**
@@ -24,7 +24,7 @@ Os teste foram validados no **Google Chrome** e **Mozilla Firefox**, e eu utiliz
 Para utiliza-las localmente no projeto, remova as tags de comentário nas linhas 23 e 24 da classe:
 
 ```
-/src/main/java/support/BrowserTypes.java
+/src/main/java/support/BrowserFactory.java
 ```
 
 E para alternar entre os navegadores, substitua na mesma classe o **Browser Default** na linha 18.
@@ -60,7 +60,7 @@ Para a criação dos cenários de testes devem ser considerados casos de sucesso
 
 
 ***O documento completo está na raiz do projeto:
-[Desafio Zup - automação Web.pdf](https://bitbucket.org/MickHill/desafio_zup_automacao_web/raw/ec74c8e1f20a18ea8a360198320085bced4ebf3a/Desafio%20Zup%20-%20automa%C3%A7%C3%A3o%20Web.pdf)***
+[Desafio Zup - automação Web.pdf](https://github.com/mickhill/desafio_zup_automacao_web/raw/ec74c8e1f20a18ea8a360198320085bced4ebf3a/Desafio%20Zup%20-%20automa%C3%A7%C3%A3o%20Web.pdf)***
 
 ---
 
@@ -162,4 +162,4 @@ Tendo em mãos os Cenários de cada fluxos de teste (fluxo base e alternativos),
 
 **Histórico de Implementação - Git-Flow**
 
-[bitbucket.org/MickHill/desafio_zup_automacao_web/commits/](https://bitbucket.org/MickHill/desafio_zup_automacao_web/commits/)
+[github.com/mickhill/desafio_zup_automacao_web/commits/](https://github.com/mickhill/desafio_zup_automacao_web/commits/)
