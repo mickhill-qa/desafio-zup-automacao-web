@@ -5,7 +5,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import cucumber.api.Scenario;
-import support.BrowserTypes;
+import support.BrowserFactory;
 
 public class BaseSteps {
 
@@ -15,7 +15,7 @@ public class BaseSteps {
 	public static void OpenBrowser() throws Throwable {
 		if (browser != null)
 			return;
-		browser = BrowserTypes.GetBrownser();
+		browser = BrowserFactory.GetBrownser();
 	}
 
 	public static void CloseBrowser() throws Throwable {
