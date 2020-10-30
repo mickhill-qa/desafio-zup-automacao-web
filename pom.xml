@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.zup</groupId>
 	<artifactId>desafio_zup_automacao_web</artifactId>
-	<version>v0.4.1</version>
+	<version>v0.4.2</version>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -33,8 +33,12 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.22.2</version>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>1.10</source>
+					<target>1.10</target>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -43,12 +47,35 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.2</version>
 				<configuration>
-					<source>1.10</source>
-					<target>1.10</target>
+					<testFailureIgnore>true</testFailureIgnore>
 				</configuration>
+			</plugin>
+			<!-- 
+				running "mvn verify -DskipTests" will generate the cucumber-report-html based on the index.json
+				running "mvn clean test" will generate the Cucumber report file
+				running "mvn clean verify" will do all together
+			 -->
+			<plugin>
+				<groupId>net.masterthought</groupId>
+				<artifactId>maven-cucumber-reporting</artifactId>
+				<version>2.8.0</version>
+				<executions>
+					<execution>
+						<id>execution</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<projectName>${project.artifactId} - ${project.version}</projectName>
+							<outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
+							<cucumberOutput>${project.build.directory}/cucumber-reports/cucumber.json</cucumberOutput>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

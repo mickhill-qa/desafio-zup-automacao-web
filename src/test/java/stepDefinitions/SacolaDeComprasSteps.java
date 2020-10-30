@@ -23,21 +23,21 @@ public class SacolaDeComprasSteps extends BaseSteps {
 	/**
 	 * FluxoBase_SacolaDeCompras
 	 **/
-	@Dado("^que o usuario escolha um produto na lista$")
-	public void queOUsuarioEscolhaUmProdutoNaLista() {
+	@Dado("^que o usuario escolhe um produto na lista$")
+	public void o_usuario_escolhe_um_produto_na_lista() {
 		BaseSteps.screenShotNow();
 		paginaResultadoBusca.selecionaProdutoDesejado();
 	}
 
-	@Quando("^o usuario adicionar o produto a Sacola de Compras$")
-	public void oUsuarioAdicionarOProdutoASacolaDeCompras() {
+	@Quando("^o usuario adiciona o produto na Sacola de Compras$")
+	public void o_usuario_adiciona_o_produto_na_Sacola_de_Compras() {
 		paginaDoProduto.esperarCarregarPagina();
 		BaseSteps.screenShotNow();
 		paginaDoProduto.adicionarProduto();
 	}
 
-	@Entao("^o sistema mostra a Sacola de Compras com o produto$")
-	public void oSistemaMostraASacolaDeComprasComOProduto() throws Throwable {
+	@Entao("^o sistema mostra a Sacola de Compras com o produto adicionado$")
+	public void o_sistema_mostra_a_Sacola_de_Compras_com_o_produto_adicionado() throws Throwable {
 		paginaSacolaDeCompras.verificaSeEstouNaPagina();
 		
 		String produtoNaBusca 	= paginaResultadoBusca.verNomeProdutoSelecionado();
@@ -51,20 +51,20 @@ public class SacolaDeComprasSteps extends BaseSteps {
 	/**
 	 * FluxoAlternativo_01_SacolaDeCompras
 	 **/
-	@Dado("^que o usuario adicione um produto a Sacola de Compras$")
-	public void queOUsuarioAdicioneUmProdutoASacolaDeCompras() throws Throwable {
-		this.queOUsuarioEscolhaUmProdutoNaLista();
-		this.oUsuarioAdicionarOProdutoASacolaDeCompras();
-		this.oSistemaMostraASacolaDeComprasComOProduto();
+	@Dado("^que o usuario adiciona um produto na Sacola de Compras$")
+	public void o_usuario_adiciona_um_produto_na_Sacola_de_Compras() throws Throwable {
+		this.o_usuario_escolhe_um_produto_na_lista();
+		this.o_usuario_adiciona_o_produto_na_Sacola_de_Compras();
+		this.o_sistema_mostra_a_Sacola_de_Compras_com_o_produto_adicionado();
 	}
 	
-	@Quando("^o usuario excluir este produto$")
-	public void oUsuarioExcluirEsteProduto() {
+	@Quando("^o usuario exclui o produto da Sacola de Compras$")
+	public void o_usuario_exclui_o_produto_da_Sacola_de_Compras() {
 		paginaSacolaDeCompras.clicaNoBotaoExcluirProduto();
 	}
 	
-	@Entao("^o sistema mostra a Sacola de Compras sem o produto$")
-	public void oSistemaMostraASacolaDeComprasSemOProduto() throws Throwable {
+	@Entao("^o sistema mostra a Sacola de Compras sem o produto adicionado$")
+	public void o_sistema_mostra_a_Sacola_de_Compras_sem_o_produto_adicionado() throws Throwable {
 		paginaSacolaDeCompras.verificaSeEstouNaPagina();
 		
 		String produtoNaSacola	= paginaSacolaDeCompras.verNomeProdutoAdicionado();
