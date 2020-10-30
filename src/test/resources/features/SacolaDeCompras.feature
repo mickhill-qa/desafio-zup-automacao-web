@@ -6,7 +6,7 @@ Funcionalidade: Sacola de Compras
   Para validar a Sacola de Compras
 
   Contexto: 
-    Dados que o usuario acesse o site do Magazine Luiza
+    Dado que o usuario acesse o site do Magazine Luiza
     Quando o usuario buscar por "Headphone JBL T500BT"
     Entao o sistema mostra resultado maior que Zero
     E o sistema mostra a lista de produto(s) encontrado(s)

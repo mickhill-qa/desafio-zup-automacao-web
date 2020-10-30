@@ -2,7 +2,7 @@ package stepDefinitions;
 
 import org.junit.Assert;
 import baseClass.BaseSteps;
-import cucumber.api.java.pt.Dados;
+import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
@@ -23,7 +23,7 @@ public class BuscaDeProdutosSteps extends BaseSteps {
 	 * FluxoBase_BuscaDeProdutos
 	 * FluxoAlternativo_02_BuscaDeProdutos
 	 **/
-	@Dados("^que o usuario acesse o site do Magazine Luiza$")
+	@Dado("^que o usuario acesse o site do Magazine Luiza$")
 	public void que_o_usuario_acesse_o_site_do_Magazine_Luiza() {
 		paginaInicial.abrirPagina();
 		paginaInicial.verificaSeEstouNaPagina();
