@@ -11,8 +11,8 @@ public class BuscaProdutosPage extends BasePage {
 	}
 
 	private String url 			= "https://www.magazineluiza.com.br/";
-	private By inputPesrquisa 	= By.xpath("//*[@id='inpHeaderSearch']");
-	private By btnPesquisar 	= By.xpath("//*[@id='btnHeaderSearch']");
+	private By inputPesrquisa 	= By.cssSelector("[data-testid=input-search]");
+	private By btnPesquisar 	= By.cssSelector("[data-testid=search-submit]");
 
 	public void abrirPagina() {
 		browser.get(url);
