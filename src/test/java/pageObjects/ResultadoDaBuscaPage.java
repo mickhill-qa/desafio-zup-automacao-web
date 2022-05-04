@@ -16,10 +16,10 @@ public class ResultadoDaBuscaPage extends BasePage {
 	private By intenList_01 	= By.cssSelector("a[data-testid=product-card-container] h2[data-testid=product-title]");
 	private String nomeProdutoSelecionado;
 	
-	public void verificaSeEstouNaPagina() {
+	public boolean verificaSeEstouNaPagina() {
 		waitElementVisible(txtComResultado,10);
 		String paginaAtual = browser.getCurrentUrl();
-		Assert.assertEquals(true, paginaAtual.contains(uri));
+		return paginaAtual.contains(uri);
 	}
 	
 	public int verQuantidadeResultados() {

@@ -38,7 +38,7 @@ public class SacolaDeComprasSteps extends BaseSteps {
 
 	@Entao("^o sistema mostra a Sacola de Compras com o produto adicionado$")
 	public void o_sistema_mostra_a_Sacola_de_Compras_com_o_produto_adicionado() throws Throwable {
-		paginaSacolaDeCompras.verificaSeEstouNaPagina();
+		Assert.assertTrue(paginaSacolaDeCompras.verificaSeEstouNaPagina());
 		String produtoNaBusca 	= paginaResultadoBusca.verNomeProdutoSelecionado();
 		String produtoNaSacola	= paginaSacolaDeCompras.verNomeProdutoAdicionado();
 		Assert.assertTrue(produtoNaSacola.contains(produtoNaBusca));
@@ -64,7 +64,7 @@ public class SacolaDeComprasSteps extends BaseSteps {
 	
 	@Entao("^o sistema mostra a Sacola de Compras sem o produto adicionado$")
 	public void o_sistema_mostra_a_Sacola_de_Compras_sem_o_produto_adicionado() throws Throwable {
-		paginaSacolaDeCompras.verificaSeEstouNaPagina();
+		Assert.assertTrue(paginaSacolaDeCompras.verificaSeEstouNaPagina());
 		String produtoNaSacola	= paginaSacolaDeCompras.verNomeProdutoAdicionado();
 		Assert.assertNull(produtoNaSacola);
 		BaseSteps.screenShotNow();

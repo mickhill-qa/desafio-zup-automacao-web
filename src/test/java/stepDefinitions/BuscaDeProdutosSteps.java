@@ -26,7 +26,7 @@ public class BuscaDeProdutosSteps extends BaseSteps {
 	@Dado("^que o usuario acessa o site do Magazine Luiza$")
 	public void o_usuario_acessa_o_site_do_Magazine_Luiza() {
 		paginaInicial.abrirPagina();
-		paginaInicial.verificaSeEstouNaPagina();
+		Assert.assertTrue(paginaInicial.verificaSeEstouNaPagina());
 		BaseSteps.screenShotNow();
 	}
 
@@ -39,7 +39,7 @@ public class BuscaDeProdutosSteps extends BaseSteps {
 
 	@Entao("^o sistema mostra resultado maior que Zero$")
 	public void o_sistema_mostra_resultado_maior_que_Zero() {
-		paginaResultadoBusca.verificaSeEstouNaPagina();
+		Assert.assertTrue(paginaResultadoBusca.verificaSeEstouNaPagina());
 		int quantidadeProdutosListados = paginaResultadoBusca.verQuantidadeResultados();
 		Assert.assertTrue(quantidadeProdutosListados > 0);
 	}
@@ -77,7 +77,7 @@ public class BuscaDeProdutosSteps extends BaseSteps {
 
 	@Entao("^o sistema continuara na mesma pagina$")
 	public void o_sistema_continuara_na_mesma_pagina() {
-		paginaInicial.verificaSeEstouNaPagina();
+		Assert.assertTrue(paginaInicial.verificaSeEstouNaPagina());
 	}
 
 	@E("^o sistema nao fara a busca$")

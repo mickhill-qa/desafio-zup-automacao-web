@@ -18,9 +18,9 @@ public class BuscaProdutosPage extends BasePage {
 		browser.get(url);
 	}
 
-	public void verificaSeEstouNaPagina() {
+	public boolean verificaSeEstouNaPagina() {
 		String paginaAtual = browser.getCurrentUrl();
-		Assert.assertEquals(true, url.equals(paginaAtual));
+		return url.equals(paginaAtual);
 	}
 
 	public void preencheCampoPesquisa(String produto) {

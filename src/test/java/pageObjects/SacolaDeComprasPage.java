@@ -1,6 +1,5 @@
 package pageObjects;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -19,12 +18,12 @@ public class SacolaDeComprasPage extends BasePage {
 	private By txtNomeProdutoAdicionado 	= By.cssSelector("#root > div > div.App.clearfix > div > div:nth-child(2) > div > div.BasketTable > div.BasketTable-items > div:nth-child(1) > div > div.BasketItemProduct > div > a > p:nth-child(1)");
 	private By btnExcluirProdutoAdicionado 	= By.cssSelector("#root > div > div.App.clearfix > div > div:nth-child(2) > div > div.BasketTable > div.BasketTable-items > div:nth-child(1) > div > div.BasketItemProduct-quantity > button > span");
 
-	public void verificaSeEstouNaPagina() throws InterruptedException {
+	public boolean verificaSeEstouNaPagina() throws InterruptedException {
 		Thread.sleep(2500); 
 		waitForPageLoad(20);
 		waitElementVisible(txtTituloDaPagina, 10);
 		String paginaAtual = browser.getCurrentUrl();
-		Assert.assertEquals(true, paginaAtual.contains(url));
+		return paginaAtual.contains(url);
 	}
 	
 	public String verNomeProdutoAdicionado() {
