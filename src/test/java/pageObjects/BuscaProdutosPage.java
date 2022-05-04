@@ -11,16 +11,16 @@ public class BuscaProdutosPage extends BasePage {
 	}
 
 	private String url 			= "https://www.magazineluiza.com.br/";
-	private By inputPesrquisa 	= By.xpath("//*[@id='inpHeaderSearch']");
-	private By btnPesquisar 	= By.xpath("//*[@id='btnHeaderSearch']");
+	private By inputPesrquisa 	= By.cssSelector("[data-testid=input-search]");
+	private By btnPesquisar 	= By.cssSelector("[data-testid=search-submit]");
 
 	public void abrirPagina() {
 		browser.get(url);
 	}
 
-	public void verificaSeEstouNaPagina() {
+	public boolean verificaSeEstouNaPagina() {
 		String paginaAtual = browser.getCurrentUrl();
-		Assert.assertEquals(true, url.equals(paginaAtual));
+		return url.equals(paginaAtual);
 	}
 
 	public void preencheCampoPesquisa(String produto) {
