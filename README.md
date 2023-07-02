@@ -131,31 +131,34 @@ Tendo em mãos os Cenários de cada fluxos de teste (fluxo base e alternativos),
 
 **Instalar pacotes na Aplicação via Maven (pom.xml)**
 
-- cucumber-java 1.2.5
-- cucumber-junit 1.2.5
+- cucumber-java 7.2.3
+- cucumber-junit 7.2.3
 - selenium-java 3.141.59
+- webdrivermanager 5.0.3
 
 **pom.xml**
 
 ```
-<dependencies>
-	<dependency>
-		<groupId>info.cukes</groupId>
-		<artifactId>cucumber-java</artifactId>
-		<version>1.2.5</version>
-	</dependency>
-	<dependency>
-		<groupId>info.cukes</groupId>
-		<artifactId>cucumber-junit</artifactId>
-		<version>1.2.5</version>
-		<scope>test</scope>
-	</dependency>
-	<dependency>
-		<groupId>org.seleniumhq.selenium</groupId>
-		<artifactId>selenium-java</artifactId>
-		<version>3.141.59</version>
-	</dependency>
-</dependencies>
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-java</artifactId>
+    <version>7.2.3</version>
+</dependency>
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-junit</artifactId>
+    <version>7.2.3</version>
+</dependency>
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>3.141.59</version>
+</dependency>
+<dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>5.0.3</version>
+</dependency>
 ```
 
 '

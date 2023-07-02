@@ -2,9 +2,9 @@ package stepDefinitions;
 
 import org.junit.Assert;
 import baseClass.BaseSteps;
-import cucumber.api.java.pt.Dado;
-import cucumber.api.java.pt.Entao;
-import cucumber.api.java.pt.Quando;
+import io.cucumber.java.pt.Dado;
+import io.cucumber.java.pt.Entao;
+import io.cucumber.java.pt.Quando;
 import pageObjects.DetalhesDoProdutoPage;
 import pageObjects.ResultadoDaBuscaPage;
 import pageObjects.SacolaDeComprasPage;
@@ -25,14 +25,14 @@ public class SacolaDeComprasSteps extends BaseSteps {
 	 **/
 	@Dado("^que o usuario escolhe um produto na lista$")
 	public void o_usuario_escolhe_um_produto_na_lista() {
-		BaseSteps.screenShotNow();
+		screenshot();
 		paginaResultadoBusca.selecionaProdutoDesejado();
 	}
 
 	@Quando("^o usuario adiciona o produto na Sacola de Compras$")
 	public void o_usuario_adiciona_o_produto_na_Sacola_de_Compras() {
 		paginaDoProduto.esperarCarregarPagina();
-		BaseSteps.screenShotNow();
+		screenshot();
 		paginaDoProduto.adicionarProduto();
 	}
 
@@ -42,7 +42,7 @@ public class SacolaDeComprasSteps extends BaseSteps {
 		String produtoNaBusca 	= paginaResultadoBusca.verNomeProdutoSelecionado();
 		String produtoNaSacola	= paginaSacolaDeCompras.verNomeProdutoAdicionado();
 		Assert.assertTrue(produtoNaSacola.contains(produtoNaBusca));
-		BaseSteps.screenShotNow();
+		screenshot();
 	}
 
 	
@@ -67,6 +67,6 @@ public class SacolaDeComprasSteps extends BaseSteps {
 		Assert.assertTrue(paginaSacolaDeCompras.verificaSeEstouNaPagina());
 		String produtoNaSacola	= paginaSacolaDeCompras.verNomeProdutoAdicionado();
 		Assert.assertNull(produtoNaSacola);
-		BaseSteps.screenShotNow();
+		screenshot();
 	}
 }

@@ -7,7 +7,7 @@ Funcionalidade: Sacola de Compras
 
   Contexto: 
     Dado que o usuario acessa o site do Magazine Luiza
-    Quando o usuario busca por "Headphone JBL T500BT"
+    Quando o usuario busca por "mesa"
     Entao o sistema mostra resultado maior que Zero
     E o sistema mostra a lista de produto(s) encontrado(s)
 

@@ -2,10 +2,10 @@ package stepDefinitions;
 
 import org.junit.Assert;
 import baseClass.BaseSteps;
-import cucumber.api.java.pt.Dado;
-import cucumber.api.java.pt.E;
-import cucumber.api.java.pt.Entao;
-import cucumber.api.java.pt.Quando;
+import io.cucumber.java.pt.Dado;
+import io.cucumber.java.pt.E;
+import io.cucumber.java.pt.Entao;
+import io.cucumber.java.pt.Quando;
 import pageObjects.BuscaProdutosPage;
 import pageObjects.ResultadoDaBuscaPage;
 
@@ -27,13 +27,13 @@ public class BuscaDeProdutosSteps extends BaseSteps {
 	public void o_usuario_acessa_o_site_do_Magazine_Luiza() {
 		paginaInicial.abrirPagina();
 		Assert.assertTrue(paginaInicial.verificaSeEstouNaPagina());
-		BaseSteps.screenShotNow();
+		screenshot();
 	}
 
 	@Quando("^o usuario busca por \"([^\"]*)\"$")
 	public void o_usuario_busca_por(String produto) {
 		paginaInicial.preencheCampoPesquisa(produto);
-		BaseSteps.screenShotNow();
+		screenshot();
 		paginaInicial.clicaNoBotaoPesquisar();
 	}
 
@@ -48,7 +48,7 @@ public class BuscaDeProdutosSteps extends BaseSteps {
 	public void o_sistema_mostra_a_lista_de_produto_s_encontrado_s() {
 		boolean existeProduto = paginaResultadoBusca.verSeExisteProdutosListados();
 		Assert.assertTrue(existeProduto);
-		BaseSteps.screenShotNow();
+		screenshot();
 	}
 
 	
@@ -60,7 +60,7 @@ public class BuscaDeProdutosSteps extends BaseSteps {
 	public void o_sistema_nao_mostra_resultado_de_produto_s_encontrado_s() {
 		boolean existeProduto = paginaResultadoBusca.verSeExisteProdutosListados();
 		Assert.assertFalse(existeProduto);
-		BaseSteps.screenShotNow();
+		screenshot();
 	}
 
 	
@@ -71,7 +71,7 @@ public class BuscaDeProdutosSteps extends BaseSteps {
 	@Quando("^o usuario busca sem preencher o campo de pesquisa$")
 	public void o_usuario_busca_sem_preencher_o_campo_de_pesquisa() {
 		paginaInicial.preencheCampoPesquisa("");
-		BaseSteps.screenShotNow();
+		screenshot();
 		paginaInicial.clicaNoBotaoPesquisar();
 	}
 
@@ -84,6 +84,6 @@ public class BuscaDeProdutosSteps extends BaseSteps {
 	public void o_sistema_nao_fara_a_busca() {
 		boolean existeProdutoListado = paginaResultadoBusca.verSeExisteProdutosListados();
 		Assert.assertFalse(existeProdutoListado);
-		BaseSteps.screenShotNow();
+		screenshot();
 	}
 }
