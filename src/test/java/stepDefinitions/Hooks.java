@@ -1,22 +1,21 @@
 package stepDefinitions;
 
 import baseClass.BaseSteps;
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import static baseClass.BaseSteps.screenshot;
 
 public class Hooks {
+    @Before
+    public void BeforeAllScenario(Scenario _scenario) {
+        BaseSteps.scenario = _scenario;
+    }
 
-	@Before
-	public void BeforeAllTest(Scenario _scenario) throws Throwable {
-		BaseSteps.OpenBrowser();
-		BaseSteps.scenario = _scenario;
-	}
-
-	@After
-	public void AfterAllTest() throws Throwable {
-		if (BaseSteps.scenario.isFailed())
-			BaseSteps.screenShotNow();
-		BaseSteps.CloseBrowser();
-	}
+    @After
+    public void AfterAllScenario() {
+        if (BaseSteps.scenario.isFailed()) {
+            screenshot();
+        }
+    }
 }

@@ -9,7 +9,7 @@ public class DetalhesDoProdutoPage extends BasePage {
 		super(_browser);
 	}
 	
-	private By btnAdicionarASacola 	= By.cssSelector("button.button__buy.button__buy-product-detail.js-add-cart-button.js-main-add-cart-button.js-add-box-prime");
+	private By btnAdicionarASacola 	= By.xpath("//button[@data-testid='bagButton']");
 	private By btnContinuarGarantia = By.cssSelector("a.price-warranty__btn--continue.btn-buy-warranty");
 
 	public void esperarCarregarPagina() {

@@ -14,7 +14,7 @@ public class SacolaDeComprasPage extends BasePage {
 	}
 
 	private String url 						= "sacola.magazineluiza.com.br";
-	private By txtTituloDaPagina 			= By.cssSelector("#root > div > div.App.clearfix > div > div.BasketPage-title");
+	private By txtTituloDaPagina 			= By.xpath("//*[@id='root']/div/div[@class='App clearfix']/div/div[2]/div/div[3]");
 	private By txtNomeProdutoAdicionado 	= By.cssSelector("#root > div > div.App.clearfix > div > div:nth-child(2) > div > div.BasketTable > div.BasketTable-items > div:nth-child(1) > div > div.BasketItemProduct > div > a > p:nth-child(1)");
 	private By btnExcluirProdutoAdicionado 	= By.cssSelector("#root > div > div.App.clearfix > div > div:nth-child(2) > div > div.BasketTable > div.BasketTable-items > div:nth-child(1) > div > div.BasketItemProduct-quantity > button > span");
 
